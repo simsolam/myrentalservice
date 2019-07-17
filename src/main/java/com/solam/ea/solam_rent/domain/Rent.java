@@ -39,6 +39,9 @@ public class Rent {
     private String message;
 
     @NotNull
+    private double price;
+
+    @NotNull
     private long vendorId;
 
     @NotNull
