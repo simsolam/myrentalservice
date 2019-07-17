@@ -36,31 +36,31 @@ public class RentController {
     }
 
     //list all the rents
-    @GetMapping("/getAllRents")
+    @GetMapping("/rents")
     public List<Rent> getAllRents(){
         return rentService.findAll();
     }
 
     //find rent by productId
-    @GetMapping("/getRentByProductId/{id}")
+    @GetMapping("/rent/{id}")
     public Rent getRentByProductId(@PathVariable long id){
         return rentService.findRentByAccessoriesId(id);
     }
 
     //Find all rents by customerId
-    @GetMapping("/getRentsByCustomerId/{id}")
+    @GetMapping("/rentByCustId/{id}")
     public List<Rent> getRentsByCustomerId(@PathVariable long id){
         return rentService.findRentByCustomerId(id);
     }
 
     //Find all rents by vendorId
-    @GetMapping("/getRentsByVendorId/{id}")
+    @GetMapping("/rentByVendId/{id}")
     public List<Rent> getRentsByVendorId(@PathVariable long id){
         return rentService.findRentByVendorId(id);
     }
 
     //Find all rents by rented date
-    @GetMapping("/getRentsByRentedDate/{rentFrom}")
+    @GetMapping("/rentByRentStart/{rentFrom}")
     public List<Rent> getRentsByRentedDate(@PathVariable String rentFrom){
 
         List<Rent> result=new ArrayList<>();
@@ -75,7 +75,7 @@ public class RentController {
     }
 
     //Find all rents by expected returning date
-    @GetMapping("/getRentsByExpectedReturnDate/{rentTo}")
+    @GetMapping("/rentByRentEnd/{rentTo}")
     public List<Rent> getRentsByExpectedReturnDate(@PathVariable String rentTo){
 
         List<Rent> result=new ArrayList<>();

@@ -32,10 +32,6 @@ public class Rent {
     private Date rentTo;
 
     @NotNull
-    @Temporal(TemporalType.DATE)
-    private Date checkOut;
-
-    @NotNull
     private String message;
 
     @NotNull
@@ -48,9 +44,8 @@ public class Rent {
     private long accessoriesId;
 
 
-    public Rent(@NotNull long customerId,@NotNull long vendorId, @NotNull Date rentFrom, @NotNull Date rentTo, @NotNull Date checkOut, @NotNull long accessoriesId) {
+    public Rent(@NotNull long customerId,@NotNull long vendorId, @NotNull Date rentFrom, @NotNull Date rentTo, @NotNull long accessoriesId) {
         this.customerId = customerId;
-        this.checkOut=checkOut;
         this.vendorId=vendorId;
         this.accessoriesId = accessoriesId;
         this.rentFrom=rentFrom;
